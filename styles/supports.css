@@ -1,0 +1,19 @@
+@supports (text-shadow: 2px 2px 0 #000) {
+    a {
+        text-shadow: 2px 1px 0 var(--text-shadow-color, rgb(255, 0, 112));
+    }
+
+    .header__title {
+        text-shadow: 4px 4px 0 var(--text-shadow-color, rgb(255, 0, 112));
+    }
+
+    .footer__title {
+        text-shadow: 2px 2px 0 var(--text-shadow-color, rgb(255, 0, 112));
+    }
+}
+
+@supports (box-shadow: 0 0 4px 2px #000) {
+    .header__decoration::after {
+        box-shadow: 0 0 4px 2px var(--brand-color, rgb(255, 0, 112));
+    }
+}

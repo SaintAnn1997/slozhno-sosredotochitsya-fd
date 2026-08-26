@@ -9,6 +9,11 @@
 body {
   min-inline-size: 375px;
   max-inline-size: 1440px;
+  font-family: var(--font-family-base, 'IBM Plex mono');
+  font-size: var(--font-size-base, 18px);
+  font-weight: var(--font-weight-regular, 400);
+  line-height: var(--line-height-base, 23.4px);
+  color: var(--text-color, rgb(241, 178, 206));
   margin: 0 auto;
 }
 
@@ -33,10 +38,115 @@ picture {
   padding: 0;
 }
 
+img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  object-position: center;
+}
+
+a {
+  text-decoration: unset;
+  border: 1px solid transparent;
+  text-shadow: 2px 1px 0 var(--text-shadow-color, rgb(255, 0, 112));
+}
+
+a:focus {
+  outline: unset;
+}
+
+a:focus-visible {
+  border: 1px solid var(--link-outline-color, rgb(241, 178, 206));
+}
+
 button,
 a {
   color: currentColor;
   font-family: inherit;
   font-size: inherit;
   line-height: inherit;
+}
+
+header {
+  padding: var(--page-padding, 10px);
+}
+
+header,
+footer {
+  height: var(--screen-block-height, 100vh);
+}
+
+main,
+footer {
+  padding: 0 var(--page-padding, 10px);
+}
+
+main {
+  display: flex;
+  flex-direction: column;
+  gap: 50px;
+  margin-top: var(--page-margin, 40px);
+}
+
+footer {
+  margin-top: var(--page-margin, 40px);
+}
+
+.title-big {
+  font-size: var(--font-size-title-lg, 7.25rem);
+  font-weight: var(--font-weight-bold, 700);
+  line-height: var(--line-height-xl, 82.5%);
+  color: var(--title-big-color, rgb(219, 0, 255));
+  text-transform: lowercase;
+}
+
+.title-decor {
+  font-size: inherit;
+  color: var(--tertiary-color, rgb(0, 0, 40));
+  background-color: var(--brand-color, rgb(255, 0, 112));
+}
+
+.section-title {
+  font-size: inherit;
+  font-weight: var(--font-weight-bold, 700);
+  color: var(--brand-color, rgb(255, 0, 112));
+}
+
+.corners {
+  position: relative;
+}
+
+.corners::after,
+.corners::before {
+  position: absolute;
+  content: "";
+}
+
+.corners::after {
+  top: 10px;
+  right: 10px;
+  width: 25px;
+  height: 25px;
+  border-top: var(--corner-border, 1px solid rgb(255, 0, 112));
+  border-right: var(--corner-border, 1px solid rgb(255, 0, 112));
+}
+
+.corners::before {
+  bottom: 10px;
+  left: 10px;
+  width: 25px;
+  height: 25px;
+  border-left: var(--corner-border, 1px solid rgb(255, 0, 112));
+  border-bottom: var(--corner-border, 1px solid rgb(255, 0, 112));
+}
+
+.base-layout {
+  display: grid;
+  grid-template-columns: 1fr;
+  gap: 20px;
+}
+
+.card__title {
+  font-size: inherit;
+  margin-bottom: 10px;
 }
